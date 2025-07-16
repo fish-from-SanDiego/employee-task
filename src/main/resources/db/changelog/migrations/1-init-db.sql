@@ -23,5 +23,4 @@ CREATE TABLE employees
         REFERENCES departments (id)
         ON DELETE RESTRICT
 );
-
 --rollback DROP TABLE employees;
