@@ -23,6 +23,10 @@ repositories {
     mavenCentral()
 }
 
+tasks.bootRun {
+    standardInput = System.`in`;
+}
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.liquibase:liquibase-core")
