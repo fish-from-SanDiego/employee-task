@@ -21,7 +21,7 @@ public class CommandExecutor implements CommandLineRunner {
     private final HelpCommand helpCommand;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         var reader = new BufferedReader(new InputStreamReader(System.in));
         String input;
         System.out.println(
