@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 @Service
@@ -22,6 +23,16 @@ public class EmployeeService {
 
     public List<Employee> findByBirthDateBetween(LocalDate from, LocalDate to) {
         return employeeRepository.findByBirthDateBetween(from, to);
+    }
+
+    public Map<String, List<Employee>> findAllGroupingByNameSorted() {
+        return employeeRepository.findAll()
+                .stream()
+                .collect(Collectors.groupingBy(
+                        Employee::getFirstName,
+                        TreeMap::new,
+                        Collectors.toList()
+                ));
     }
 
     public Map<String, List<Employee>> findAllGroupingByName() {
