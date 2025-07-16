@@ -6,7 +6,7 @@ public enum CommandType {
     FIND_ALL_BETWEEN_YEARS(CommandType.FIND_ALL_BETWEEN_YEARS_),
     HELP(CommandType.HELP_);
 
-    private String name;
+    private final String name;
 
     public static final String FIND_BY_ID_ = "findById";
     public static final String FIND_ALL_GROUPED_BY_NAME_ = "groupByName";

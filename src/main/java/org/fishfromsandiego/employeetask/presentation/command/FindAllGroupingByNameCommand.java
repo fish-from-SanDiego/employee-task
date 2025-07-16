@@ -28,9 +28,7 @@ public class FindAllGroupingByNameCommand implements SimpleCommand {
         var sb = new StringBuilder();
         employeesByName.forEach((name, employees) -> {
             sb.append("Сотрудники с именем ").append(name).append(":\n");
-            employees.forEach(employee -> {
-                sb.append(employee.toString()).append("\n");
-            });
+            employees.forEach(employee -> sb.append(employee.toString()).append("\n"));
         });
         sb.delete(sb.length() - 1, sb.length());
 
